@@ -19,11 +19,11 @@ app.post("/rooms", (req, res) => {
       roomId,
       new Map([
         ["users", new Map()],
-        ["users", []],
+        ["messages", []],
       ])
     );
   }
-  res.json(rooms);
+  res.send();
 });
 
 io.on("connection", (socket) => {
