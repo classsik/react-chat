@@ -10,13 +10,13 @@ const JoinBlock = ({ onLogin }) => {
     if (!roomId || !username) {
       return alert("Введите");
     }
+    const obj = {
+      roomId,
+      username,
+    };
     setLoading(true);
-    await axios
-      .post("/rooms", {
-        roomId,
-        username,
-      })
-      .then(onLogin);
+    await axios.post("/rooms", obj);
+    onLogin(obj);
   };
 
   return (

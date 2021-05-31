@@ -27,7 +27,7 @@ app.post("/rooms", (req, res) => {
 });
 
 io.on("connection", (socket) => {
-  console.log(socket.id);
+  socket.on("ROOM:JOIN", (data) => {});
 });
 
 server.listen(8000, () => {
